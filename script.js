@@ -17,6 +17,14 @@ document.getElementById('CEP').addEventListener('input', function(e){
     e.target.value = CEPPattern;
 })
 
+// Máscara de entrada para o Celular
+document.getElementById('contato').addEventListener('input', function (e) {
+  var value = e.target.value;
+  var ContatoPattern = value.replace(/\D/g, '') // Remove qualquer coisa que não seja número
+    .replace(/^(\d{2})(\d{4,5})(\d{4})$/, '($1) $2-$3');// Adiciona parênteses, espaço e traço
+  e.target.value = ContatoPattern;
+});
+
 // Pop-up adicionar cliente
 var modalAddClient = document.getElementById("modalAddClient");
 var btnAddClient = document.getElementById("btnAddClient");
