@@ -114,6 +114,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Limpa os campos do formulário
     formAddClient.reset();
+
+    // Remove a borda depois dos dados enviados
+    setTimeout(function() {
+      document.getElementById('cpf').style.border = '';
+      document.getElementById('CEP').style.border = '';
+      document.getElementById('email').style.border = '';
+      document.getElementById('contato').style.border = '';
+    }, 1000);
   });
 
   function exibirClientes() {
