@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // Verifica se o nome é válido
+  document.getElementById('nome').addEventListener('input', function (e) {
+    var value = e.target.value;
+    var nomePattern = value;
+
+    if (nomePattern.length > 2) {
+      e.target.style.border = "2px solid green"; // Caso válido, borda verde
+    } else {
+      e.target.style.border = "2px solid red"; // Caso inválido, borda vermelha
+    }
+
+  })
   // Máscara de entrada para o CPF
   document.getElementById('cpf').addEventListener('input', function (e) {
     var value = e.target.value;
@@ -68,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var modalAddClient = document.getElementById("modalAddClient");
   var btnAddClient = document.getElementById("btnAddClient");
   var spanAddClient = document.querySelector("#modalAddClient .close");
+  var spanEditClient = document.querySelector("#modalEditClient .close");
 
   btnAddClient.onclick = function () {
     modalAddClient.style.display = "block";
@@ -75,6 +88,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   spanAddClient.onclick = function () {
     modalAddClient.style.display = "none";
+  }
+
+  spanEditClient.onclick = function () {
+    modalEditClient.style.display = "none";
   }
 
   window.onclick = function (event) {
@@ -117,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Remove a borda depois dos dados enviados
     setTimeout(function() {
+      document.getElementById('nome').style.border = '';
       document.getElementById('cpf').style.border = '';
       document.getElementById('CEP').style.border = '';
       document.getElementById('email').style.border = '';
@@ -194,6 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
   // Função para adicionar manipuladores de evento aos botões "Editar"
   function Configura() {
     var btnsEditarCliente = document.querySelectorAll('.btnEditarCliente');

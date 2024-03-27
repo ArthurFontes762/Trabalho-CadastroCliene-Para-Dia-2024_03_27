@@ -44,8 +44,8 @@ h1 {
 .card-content {
   background-color: #0d3b61;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);padding: 20px;
-  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 /* Estilo para os botões */
@@ -53,13 +53,27 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   margin-right: 10px;
-  cursor: pointer;
   background-color: #007bff;
   /* Cor de fundo azul */
   color: #fff;
   /* Cor do texto branco */
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.editdelete .image {
+  padding: 10px 20px;
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#btnDeleteClient {
+  margin: 10px;
+  background-color: #ff0000;
+  cursor: pointer;
 }
 
 .letraBranca {
@@ -76,7 +90,6 @@ button {
 
 .botaoLista {
   align-items: end;
-
 }
 
 button:hover {
@@ -84,11 +97,10 @@ button:hover {
   /* Cor de fundo azul escuro ao passar o mouse */
 }
 
-
-
 #btnAddClient {
   background-color: #28a745;
   align-items: end;
+  cursor: pointer;
   /* Cor de fundo verde */
 }
 
@@ -100,6 +112,19 @@ button:hover {
   background-color: #218838;
   /* Cor de fundo verde escuro ao passar o mouse */
 }
+
+.Enviar {
+  color: white;
+  background-color: #28a745;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.Enviar:hover {
+  background-color: #218838;
+  /* Cor de fundo verde escuro ao passar o mouse */
+}
+
 
 .card h2 {
   color: #3498db;
