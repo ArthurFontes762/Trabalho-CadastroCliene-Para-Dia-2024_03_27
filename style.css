@@ -62,7 +62,7 @@ button {
   cursor: pointer;
 }
 
-.editdelete .image {
+.Atualizar {
   padding: 10px 20px;
   background-color: green;
   border: none;
@@ -71,7 +71,7 @@ button {
 }
 
 #btnDeleteClient {
-  margin: 10px;
+  margin-bottom: 10px;
   background-color: #ff0000;
   cursor: pointer;
 }
