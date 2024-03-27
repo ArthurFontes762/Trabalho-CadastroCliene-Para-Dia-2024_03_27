@@ -196,5 +196,50 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+  function editarCliente(index) {
+    var cliente = listaClientes[index];
+  
+    // Preenche o formulário de edição com os dados do cliente selecionado
+    document.getElementById("nomeEdit").value = cliente.nome;
+    document.getElementById("cpfEdit").value = cliente.cpf;
+    document.getElementById("CEPEdit").value = cliente.cep;
+    document.getElementById("emailEdit").value = cliente.email;
+    document.getElementById("contatoEdit").value = cliente.contato;
+  
+    // Exibe o modal de edição
+    var modalEditClient = document.getElementById("modalEditClient");
+    modalEditClient.style.display = "block";
+  
+    // Adiciona um evento de submit ao formulário de edição
+    document.getElementById("formEditClient").onsubmit = function (e) {
+      e.preventDefault();
+  
+      // Atualiza os dados do cliente com os novos valores do formulário
+      listaClientes[index].nome = document.getElementById("nomeEdit").value;
+      listaClientes[index].cpf = document.getElementById("cpfEdit").value;
+      listaClientes[index].cep = document.getElementById("CEPEdit").value;
+      listaClientes[index].email = document.getElementById("emailEdit").value;
+      listaClientes[index].contato = document.getElementById("contatoEdit").value;
+  
+      // Exibe novamente a lista de clientes com os dados atualizados
+      exibirClientes();
+  
+      // Fecha o modal de edição
+      modalEditClient.style.display = "none";
+    };
+  
+    // Adiciona um evento ao botão de exclusão
+    document.getElementById("btnDeleteClient").onclick = function () {
+      // Remove o cliente da lista de clientes
+      listaClientes.splice(index, 1);
+  
+      // Exibe novamente a lista de clientes sem o cliente excluído
+      exibirClientes();
+  
+      // Fecha o modal de edição
+      modalEditClient.style.display = "none";
+    };
+  }
 });
 
